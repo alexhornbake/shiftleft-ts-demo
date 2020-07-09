@@ -20,7 +20,7 @@ jobs:
       with:
         java-version: 1.8
     - name: NextGen Static Analysis
-      run: ${GITHUB_WORKSPACE}/sl analyze --no-diagnostic --app shiftleft-ts-demo --tag branch=${GITHUB_REF} --js --cpg . -- --transpiling
+      run: ${GITHUB_WORKSPACE}/sl analyze --no-diagnostic --app shiftleft-ts-demo --tag branch=${{ github.head_ref }} --js --cpg . -- --transpiling
       env:
         SHIFTLEFT_ACCESS_TOKEN: ${{ secrets.SHIFTLEFT_ACCESS_TOKEN }}
         SHIFTLEFT_API_HOST: www-ext.stg.shiftleft.io
